@@ -1,0 +1,14 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    font-size: 18px;
+}
+
+$bg-color: gray;
+$library-color: brown;
+$book-color: pink;
+$book-info: green;
+$book-text: white;
