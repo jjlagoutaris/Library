@@ -7,8 +7,19 @@
     font-size: 18px;
 }
 
-$bg-color: gray;
-$library-color: brown;
-$book-color: pink;
-$book-info: green;
-$book-text: white;
+$bg-color: #ABCDEF;
+$library-color: #123456;
+$library-title: rgba(240, 69, 240, 1);
+$book-color: #009879;
+$book-text: #FFFFFF;
+
+$buttons-container: lime;
+$addBtn: green;
+$addBtnHover: blue;
+$removeBtn: red;
+$removeBtnHover: white;
+$emptyLibraryBtn: black;
+$emptyLibraryBtnText: white;
+$emptyBtnHover: red;
+$updateBtn: yellow;
+$updateBtnHover: green;

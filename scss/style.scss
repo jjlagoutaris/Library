@@ -4,31 +4,83 @@ body{
     background-color: $bg-color;
     height: 100vh;
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.library-container{
-    width: 80vw;
-    height: 80vh;
+#library-title{
+    font-size: 2rem;
+    color: $library-title;
+    text-align: center;
+    margin-bottom: 10px;
+    span{
+        font-size: 8px;
+    }
+}
+
+#library{
     padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     background-color: $library-color;
-    .book{
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    margin-bottom: 20%;
+    min-width: 300px;
+    .book-info-row{
         background-color: $book-color;
-        border: 1px solid black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .title, .author, .pages, .progress{
-            flex: 1;
-            border: 1px solid black;
-            background-color: $book-info;
-            color: $book-text;
-            width: 60%;
+        text-align: left;
+    }
+    .row{
+        color: $book-text;
+        .book-cell{
+            border: 1px solid rgba(0, 0, 0, .3);
+            text-align: left;
+            padding: 10px;
         }
     }
 }
+
+#buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px auto;
+    width: 50%;
+    gap: 20px;
+}
+
+button{
+    font-size: 1rem;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+button.add-book{
+    background-color: $addBtn;
+    &:hover{
+        background-color: $addBtnHover;
+    }
+}
+
+button.remove-selected-books{
+    background-color: $removeBtn;
+    &:hover{
+        background-color: $removeBtnHover;
+    }
+}
+
+button.empty-library{
+    background-color: $emptyLibraryBtn;
+    color: $emptyLibraryBtnText;
+    &:hover{
+        background-color: $emptyBtnHover;
+    }
+}
+
+button.update-progress{
+    background-color: $updateBtn;
+    &:hover{
+        background-color: $updateBtnHover;
+    }
+}
+
+

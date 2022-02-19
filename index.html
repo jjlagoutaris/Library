@@ -9,37 +9,20 @@
     <link rel="shortcut icon" href="open-book.png" type="image/x-icon">
 </head>
 <body>
-    <div class="library-container">
-        <div class="book">
-            <div class="title">hg</div>
-            <div class="author">sc</div>
-            <div class="pages">32</div>
-            <div class="progress">read</div>
-        </div>
-        <div class="book">
-            <div class="title"></div>
-            <div class="author"></div>
-            <div class="pages"></div>
-            <div class="progress"></div>
-        </div>
-        <div class="book">
-            <div class="title"></div>
-            <div class="author"></div>
-            <div class="pages"></div>
-            <div class="progress"></div>
-        </div>
-        <div class="book">
-            <div class="title"></div>
-            <div class="author"></div>
-            <div class="pages"></div>
-            <div class="progress"></div>
-        </div>
-        <div class="book">
-            <div class="title"></div>
-            <div class="author"></div>
-            <div class="pages"></div>
-            <div class="progress"></div>
-        </div>
+    <div id="library-title">The Official* Senegal-Secaucus Library <span>*(that is actually unofficial, shhh!)</span></div>
+    <table id="library">
+        <tr class="book-info-row row">
+            <th class="title book-cell">TITLE</th>
+            <th class="author book-cell">AUTHOR</th>
+            <th class="pages book-cell">PAGE COUNT</th>
+            <th class="progress book-cell">PROGRESS</th>
+        </tr>
+    </table>
+    <div id="buttons">
+        <button class="add-book">Add Book</button>
+        <button class="update-progress">Update Progress</button>
+        <button class="remove-selected-books">Remove Selected Books</button>
+        <button class="empty-library">Empty Library</button>
     </div>
     <script src="library.js"></script>
 </body>

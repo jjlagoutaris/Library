@@ -10,56 +10,95 @@
 }
 
 body {
-  background-color: gray;
+  background-color: #ABCDEF;
   height: 100vh;
   width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.library-container {
-  width: 80vw;
-  height: 80vh;
+#library-title {
+  font-size: 2rem;
+  color: #f045f0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#library-title span {
+  font-size: 8px;
+}
+
+#library {
   padding: 10px;
+  background-color: #123456;
+  border-collapse: collapse;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-bottom: 20%;
+  min-width: 300px;
+}
+
+#library .book-info-row {
+  background-color: #009879;
+  text-align: left;
+}
+
+#library .row {
+  color: #FFFFFF;
+}
+
+#library .row .book-cell {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: left;
+  padding: 10px;
+}
+
+#buttons {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  background-color: brown;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin: 10px auto;
+  width: 50%;
+  gap: 20px;
 }
 
-.library-container .book {
-  background-color: pink;
-  border: 1px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+button {
+  font-size: 1rem;
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-.library-container .book .title, .library-container .book .author, .library-container .book .pages, .library-container .book .progress {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  border: 1px solid black;
+button.add-book {
   background-color: green;
+}
+
+button.add-book:hover {
+  background-color: blue;
+}
+
+button.remove-selected-books {
+  background-color: red;
+}
+
+button.remove-selected-books:hover {
+  background-color: white;
+}
+
+button.empty-library {
+  background-color: black;
   color: white;
-  width: 60%;
+}
+
+button.empty-library:hover {
+  background-color: red;
+}
+
+button.update-progress {
+  background-color: yellow;
+}
+
+button.update-progress:hover {
+  background-color: green;
 }
 /*# sourceMappingURL=style.css.map */
