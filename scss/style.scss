@@ -1,86 +1,45 @@
 @import "globals";
+@import "buttons";
+@import "library";
 
 body{
     background-color: $bg-color;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-#library-title{
-    font-size: 2rem;
-    color: $library-title;
-    text-align: center;
-    margin-bottom: 10px;
-    span{
-        font-size: 8px;
-    }
-}
-
-#library{
+.left{
+    background-color: white;
+    flex: .5;
+    min-height: 100%;
+    border-right: 1px solid black;
     padding: 10px;
-    background-color: $library-color;
-    border-collapse: collapse;
-    font-size: 1.5rem;
-    margin: 0 auto;
-    margin-bottom: 20%;
-    min-width: 300px;
-    .book-info-row{
-        background-color: $book-color;
-        text-align: left;
-    }
-    .row{
-        color: $book-text;
-        .book-cell{
-            border: 1px solid rgba(0, 0, 0, .3);
-            text-align: left;
-            padding: 10px;
+    background-color: $left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    fieldset{
+        border-radius: 10px;
+        padding: 10px;
+        background-color: $form;
+        legend{
+            color: $form-legend;
+        }
+        input{
+            width: 100%;
+            margin: 10px 0;
+        }
+        input[type="radio"]{
+            width: auto;
         }
     }
 }
 
-#buttons{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10px auto;
-    width: 50%;
-    gap: 20px;
+.right{
+    flex: 1;
+    height: 100%;
 }
-
-button{
-    font-size: 1rem;
-    padding: 12px;
-    cursor: pointer;
-    border: none;
-    font-family: "Roboto Condensed", sans-serif;
-}
-
-button.add-book{
-    background-color: $addBtn;
-    &:hover{
-        background-color: $addBtnHover;
-    }
-}
-
-button.remove-selected-books{
-    background-color: $removeBtn;
-    &:hover{
-        background-color: $removeBtnHover;
-    }
-}
-
-button.empty-library{
-    background-color: $emptyLibraryBtn;
-    color: $emptyLibraryBtnText;
-    &:hover{
-        background-color: $emptyBtnHover;
-    }
-}
-
-button.update-progress{
-    background-color: $updateBtn;
-    &:hover{
-        background-color: $updateBtnHover;
-    }
-}
-
 

@@ -1,0 +1,45 @@
+#buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px auto;
+    width: 50%;
+    gap: 20px;
+}
+
+button{
+    font-size: 1rem;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    font-family: "Roboto Condensed", sans-serif;
+    border-radius: 5%;
+}
+
+button.add-book{
+    background-color: $addBtn;
+    &:hover{
+        background-color: $addBtnHover;
+    }
+}
+
+button.remove-selected-books{
+    background-color: $removeBtn;
+    &:hover{
+        background-color: $removeBtnHover;
+    }
+}
+
+button.empty-library{
+    background-color: $emptyLibraryBtn;
+    color: $emptyLibraryBtnText;
+    &:hover{
+        background-color: $emptyBtnHover;
+    }
+}
+
+button.update-progress{
+    background-color: $updateBtn;
+    &:hover{
+        background-color: $updateBtnHover;
+    }
+}

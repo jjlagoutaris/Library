@@ -5,51 +5,75 @@ let updateBtn = document.querySelector('.update-progress');
 let removeBooksBtn = document.querySelector('.remove-selected-books');
 let emptyLibraryBtn = document.querySelector('.empty-library');
 
-function Book(title, author, pages, progress){
+let title = document.getElementById("title");
+let author = document.getElementById("author");
+let pages = document.getElementById("pages");
+// let progressRead = document.getElementById("read");
+// let progressUnread = document.getElementById("unread");
 
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.progress = progress;
+const radioButtons = document.querySelectorAll('input[name="progress"]');
+let selectedProgress;
+let bookIndex = 0;
 
+
+class Book {
+    constructor(title, author, pages, progress, index) {
+
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.progress = progress;
+        this.index = index;
+
+    }
 }
 
-hg = new Book("Hunger Games", "Suzanne Collins", 300, "Read");
-hg2 = new Book("Hunger Games: Catching Fire", "Suzanne Collins", 350, "Read");
+addBtn.addEventListener("click", () => {
+    for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+            selectedProgress = radioButton.value;
+            break;
+        }
+    }
+});
 
+addBtn.addEventListener('click', addBookToLibrary);
 
+function addBookToLibrary() {
 
-// addBookToLibrary(hg);
-// addBookToLibrary(hg2);
+    let obj = new Book(title.value, author.value, pages.value, selectedProgress, bookIndex++);
 
-function addBookToLibrary(bookObj){
-    userLibrary.push(bookObj);
+    userLibrary.push(obj);
 
     let row = document.createElement("tr");
     row.className = 'row';
 
-    let title = document.createElement("td");
-    title.className = 'book-cell';
-    title.textContent = bookObj.title;
+    let titleCell = document.createElement("td");
+    titleCell.className = 'book-cell';
+    titleCell.textContent = obj.title;
 
-    let author = document.createElement("td");
-    author.className = 'book-cell';
-    author.textContent = bookObj.author;
+    let authorCell = document.createElement("td");
+    authorCell.className = 'book-cell';
+    authorCell.textContent = obj.author;
 
-    let pages = document.createElement("td");
-    pages.className = 'book-cell';
-    pages.textContent = bookObj.pages;
+    let pagesCell = document.createElement("td");
+    pagesCell.className = 'book-cell';
+    pagesCell.textContent = obj.pages;
 
-    let progress = document.createElement("td");
-    progress.className = 'book-cell';
-    progress.textContent = bookObj.progress;
+    let progressCell = document.createElement("td");
+    progressCell.className = 'book-cell';
+    progressCell.textContent = obj.progress;
 
-    
-    row.appendChild(title);
-    row.appendChild(author);
-    row.appendChild(pages);
-    row.appendChild(progress);
+    row.appendChild(titleCell);
+    row.appendChild(authorCell);
+    row.appendChild(pagesCell);
+    row.appendChild(progressCell);
     libraryContainer.appendChild(row);
+
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    selectedProgress = '';
 }
 
 

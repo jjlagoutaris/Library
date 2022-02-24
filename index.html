@@ -9,20 +9,57 @@
     <link rel="shortcut icon" href="open-book.png" type="image/x-icon">
 </head>
 <body>
-    <div id="library-title">The Official* Senegal-Secaucus Library <span>*(that is actually unofficial, shhh!)</span></div>
-    <table id="library">
-        <tr class="book-info-row row">
-            <th class="title book-cell">TITLE</th>
-            <th class="author book-cell">AUTHOR</th>
-            <th class="pages book-cell">PAGE COUNT</th>
-            <th class="progress book-cell">PROGRESS</th>
-        </tr>
-    </table>
-    <div id="buttons">
-        <button class="add-book">Add Book</button>
-        <button class="update-progress">Update Progress</button>
-        <button class="remove-selected-books">Remove Selected Books</button>
-        <button class="empty-library">Empty Library</button>
+    <div class="left">
+        <form action="">
+            <fieldset>
+                <legend>New Book</legend>
+
+                <label for="title">Title
+                    <input type="text" name="title" id="title">
+                </label>
+
+                <label for="author">Author
+                    <input type="text" name="author" id="author">
+                </label>
+
+                <label for="pages">Pages
+                    <input type="number" name="pages" id="pages" min="1">
+                </label>
+
+                <div class="progress-container">
+                    <label for="read">Read
+                        <input type="radio" name="progress" id="read" value="read">
+                    </label>
+                    <label for="unread">Unread
+                        <input type="radio" name="progress" id="unread" value="unread" checked>
+                    </label>
+                </div>
+
+            </fieldset>
+        </form>
+        <div id="buttons">
+            <button class="add-book">Add Book</button>
+            <button class="update-progress">Update Progress</button>
+            <button class="remove-selected-books">Remove Selected Books</button>
+            <button class="empty-library">Empty Library</button>
+        </div>
+    </div>
+    <div class="right">
+        <div id="library-title">The Official* Senegal-Secaucus Library <span>*(that is actually unofficial, shhh!)</span></div>
+        <table id="library">
+            <tr class="book-info-row row">
+                <th class="title book-cell">TITLE</th>
+                <th class="author book-cell">AUTHOR</th>
+                <th class="pages book-cell">PAGE COUNT</th>
+                <th class="progress book-cell">PROGRESS</th>
+            </tr>
+            <tr class="row">
+                <th class="book-cell">1</th>
+                <th class="book-cell">2</th>
+                <th class="book-cell">3</th>
+                <th class="book-cell">4</th>
+            </tr>
+        </table>
     </div>
     <script src="library.js"></script>
 </body>
