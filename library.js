@@ -28,25 +28,29 @@ class Book {
     }
 }
 
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", checkRadioButtons);
+
+addBtn.addEventListener('click', addBookToLibrary);
+
+
+
+function checkRadioButtons() {
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
             selectedProgress = radioButton.value;
             break;
         }
     }
-});
-
-addBtn.addEventListener('click', addBookToLibrary);
+}
 
 function addBookToLibrary() {
 
-    let obj = new Book(title.value, author.value, pages.value, selectedProgress, bookIndex++);
+    let obj = new Book(title.value, author.value, pages.value, selectedProgress, bookIndex);
 
     userLibrary.push(obj);
 
     let row = document.createElement("tr");
-    row.className = 'row';
+    row.setAttribute('class', `row row${bookIndex}`);
 
     let titleCell = document.createElement("td");
     titleCell.className = 'book-cell';
@@ -64,25 +68,32 @@ function addBookToLibrary() {
     progressCell.className = 'book-cell';
     progressCell.textContent = obj.progress;
 
+    let actionCell = document.createElement("td");
+    actionCell.className = 'book-cell';
+    actionCell.className = 'buttonCell';
+    let removeBtn = document.createElement("button");
+    removeBtn.setAttribute("class", "removeBtn");
+    removeBtn.setAttribute('data-index', `${bookIndex}`);
+    removeBtn.textContent = 'X';
+    actionCell.appendChild(removeBtn);
+
     row.appendChild(titleCell);
     row.appendChild(authorCell);
     row.appendChild(pagesCell);
     row.appendChild(progressCell);
+    row.appendChild(actionCell);
     libraryContainer.appendChild(row);
 
     title.value = '';
     author.value = '';
     pages.value = '';
     selectedProgress = '';
+    bookIndex++;
 }
 
-
-// function viewLibraryBooks(){
-//     for (let i = 0; i < userLibrary.length; i++){
-//         for(libraryBook in userLibrary[i]){
-//             book.textContent += `${libraryBook}: ${userLibrary[i][libraryBook]} \n`;
-//         }
-//     }
-// }
-
-// viewLibraryBooks();
+libraryContainer.addEventListener('click', function removeBook(e){
+    if(e.target.classList.contains('removeBtn')){
+        let removedBook = document.querySelector(`.row${e.target.getAttribute('data-index')}`);
+        removedBook.remove();
+    }
+});

@@ -165,4 +165,42 @@ body {
           flex: 1;
   height: 100%;
 }
+
+.removeBtn {
+  width: 100%;
+  background-color: red;
+  color: black;
+  font-size: 12px;
+}
+
+.buttonCell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+button.removeBtn {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+}
+
+button.removeBtn:hover {
+  background-color: blue;
+}
 /*# sourceMappingURL=style.css.map */

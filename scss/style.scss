@@ -43,3 +43,28 @@ body{
     height: 100%;
 }
 
+
+.removeBtn{
+    width: 100%;
+    background-color: red;
+    color: black;
+    font-size: 12px;
+}
+
+.buttonCell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+button.removeBtn{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    &:hover{
+        background-color: blue;
+    }
+}
